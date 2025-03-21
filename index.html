@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <iframe id="visor" style="width:100%; height:100vh; border:none;"></iframe>
+    <script>
+        const url = new URL(window.location.href);
+        const k = url.searchParams.get("k");
+        if (k) {
+            fetch(`https://script.google.com/macros/s/ID_DEL_SCRIPT/exec?k=${k}`)
+                .then(res => res.text())
+                .then(result => {
+                    if (result) {
+                        document.location.replace(result);
+                    } else {
+                        document.location.replace("https://drive.google.com/file/d/1LmyX_fB4GPLq6osM2TaDD69p4rzHxX5J/view?usp=sharing");
+                    }
+                })
+                .catch(() => {
+                    document.location.replace("https://drive.google.com/file/d/1LmyX_fB4GPLq6osM2TaDD69p4rzHxX5J/view?usp=sharing");
+                });
+        }
+    </script>
+</body>
+</html>
