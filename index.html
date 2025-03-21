@@ -10,7 +10,7 @@
         const url = new URL(window.location.href);
         const k = url.searchParams.get("k");
         if (k) {
-            fetch(`https://script.google.com/macros/s/ID_DEL_SCRIPT/exec?k=${k}`)
+            fetch(`https://script.google.com/macros/s/AKfycbwlrOA4XEkiA5PwQ-W9ISSAxjGa0BKZX-DpoZgzNa4bFfh9OD9uTXEy9vXaKkd3XfzE/exec?k=${k}`)
                 .then(res => res.text())
                 .then(result => {
                     if (result) {
